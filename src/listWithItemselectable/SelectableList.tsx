@@ -6,6 +6,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   Image,
+  SafeAreaView,
 } from 'react-native';
 
 const SelectableList = () => {
@@ -69,12 +70,14 @@ const SelectableList = () => {
   };
 
   return (
-    <FlatList
-      style={{flex: 1}}
-      data={listData}
-      renderItem={item => renderFlatListItem(item)}
-      keyExtractor={(item: any, index: any) => index}
-    />
+    <SafeAreaView style={{flex: 1}}>
+      <FlatList
+        style={{flex: 1}}
+        data={listData}
+        renderItem={item => renderFlatListItem(item)}
+        keyExtractor={(item: any, index: any) => index}
+      />
+    </SafeAreaView>
   );
 };
 
