@@ -14,7 +14,6 @@ export class Node {
 }
 
 export class Tree {
-
     constructor() {
         this.root = null // head of tree
     }
