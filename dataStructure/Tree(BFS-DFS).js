@@ -19,20 +19,20 @@ export class Tree {
     }
 
     traverseBF(fn) {
-        const arr = [this.root]
-        while (arr.length) {
-            const node = arr.shift()
-            arr.push(...node.children) // to add items at last of array
-            fn(node)
+        const arr = [this.root] // create an array and push the root to the array
+        while (arr.length) { // till array have an element iterate the array
+            const node = arr.shift() // pick the first element of array and remove from array
+            arr.push(...node.children) // add all child items of selected node at last of selected array
+            fn(node) // perform the action passed to the node
         }
     }
 
     traverseDF(fn) {
-        const arr = [this.root]
-        while (arr.length) {
-            const node = arr.shift()
-            arr.unshift(...node.children) // to add items at front of array
-            fn(node)
+        const arr = [this.root] // create an array and push the root to the array
+        while (arr.length) { // till array have an element iterate the array
+            const node = arr.shift() // pick the first element of array and remove from array
+            arr.unshift(...node.children) // add all child items of selected node at start of selected array
+            fn(node) // perform the action passed to the node
         }
     }
 
